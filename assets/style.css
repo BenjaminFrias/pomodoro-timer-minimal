@@ -1,0 +1,118 @@
+/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --white: #f8f8f8;
+    --carbon: #161515;
+    --paragraph-size: 1.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: all 400ms ease;
+}
+
+button:hover {
+    color: var(--carbon);
+    background-color: var(--white);
+    transition: all 200ms ease;
+}
+
+/* TYPOGRAPHY */
+
+p {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* BACKGROUND */
+
+.background {
+    position: absolute;
+    z-index: -1;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("img/daniel-leone-g30P1zcOzXo-unsplash.jpg");
+    background-size: cover;
+}
+
+/* CONTAINER */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* TIMER */
+
+.timer {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-basis: 60vh;
+}
+
+.timer p {
+    font-size: 15vw;
+}
+
+/* LINE */
+
+.timer-line {
+    width: 80vw;
+    height: 3px;
+    background-color: var(--white);
+}
+
+/* TIMER GENERAL */
+
+.timer-controls, .timer-options {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    gap: 25px;
+
+}
+
+/* TIMER CONTROLS */
+
+.timer-controls {
+    margin-top: 25px;
+}
+
+.timer-controls button {
+    min-width: 10%;
+    height: 30px;
+}
+
+/* TIMER OPTIONS */
+
+.timer-options {
+    gap: 25px;
+    margin-top: 20vh;
+}
+
+.timer-options button {
+    min-width: 20%;
+    height: 30px;
+    border: 1px solid var(--white);
+}
+
+
+
