@@ -1,19 +1,45 @@
-const startBtn = document.querySelector('.start-pause-btn');
-const timerMinutes = document.querySelector('.timer-minutes');
-const timerSeconds = document.querySelector('.timer-seconds');
+const startBtn = document.querySelector(".start-pause-btn");
+const restartBtn = document.querySelector(".reset-btn");
 
-startBtn.addEventListener('click', startPomodoro);
+const timerMinutes = document.querySelector(".timer-minutes");
+const timerSeconds = document.querySelector(".timer-seconds");
 
 // Global variables
-let minutes = 25;
-let duration = minutes * 60;
-let seconds = 0;
+let minutes;
+let duration;
+let seconds;
+let interval;
 
-function startPomodoro() {
-    let interval = setInterval(pomodoro, 1000);
+// Pomodoro times
+let breakTime = 5;
+let pomodoroTime = 25;
+let longBreakTime = 15;
+
+// Buttons listeners for pomodoro timers
+startBtn.addEventListener("click", () => {
+    startPomodoro(pomodoroTime);
+});
+
+// Restart button
+restartBtn.addEventListener("click", () => {
+    restartPomodoro(pomodoroTime);
+});
+
+function startPomodoro(minutes=20) {
+    // Restart from the minutes
+    clearInterval(interval);
+
+    // Get the duration in seconds
+    duration = minutes * 60;
+    minutes = duration / 60;
+    seconds = 0;
+
+    // Start in the right second
+    timer();
+    interval = setInterval(timer, 1000);
 }
 
-function pomodoro() {
+function timer() {
     // Get minutes and seconds
     minutes = parseInt(duration / 60);
     seconds = parseInt(duration % 60);
@@ -28,6 +54,12 @@ function pomodoro() {
 
     duration--;
     if (duration < 0) {
-        clearInterval(interval)
+        clearInterval(interval);
     }
+}
+
+function restartPomodoro(minutes) {
+    clearInterval(interval);
+    timerMinutes.textContent = minutes;
+    timerSeconds.textContent = '00';
 }

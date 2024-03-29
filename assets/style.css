@@ -29,6 +29,10 @@ button:hover {
     transition: all 200ms ease;
 }
 
+button:active {
+    transform: scale(1.4);
+}
+
 /* TYPOGRAPHY */
 
 p {
