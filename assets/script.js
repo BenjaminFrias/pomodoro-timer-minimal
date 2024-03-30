@@ -99,3 +99,14 @@ function displayDuration() {
 
 // Set intial time
 restartPomodoro();
+
+// Click sounds
+let clickSound = new Audio('assets/clickSound.mp3');
+clickSound.playbackRate=1.5;
+
+const btns = document.querySelectorAll('button');
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        clickSound.play();
+    });
+});
