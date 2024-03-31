@@ -78,10 +78,15 @@ p {
 
 /* LINE */
 
-.timer-line {
-    width: 80vw;
+.timer-line, .line-behind {
+    align-self: start;
+    width: 100%;
     height: 3px;
     background-color: var(--white);
+}
+
+.line-behind {
+    opacity: 0.5;
 }
 
 /* TIMER GENERAL */
