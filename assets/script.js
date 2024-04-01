@@ -21,7 +21,6 @@ let shortBreakDuration = 5;
 let longBreakDuration = 15;
 let currentPomodoro = focusDuration;
 let duration = currentPomodoro * 60;
-duration = 5;
 
 let alarmSound = new Audio("assets/notificationSound.mp3");
 
