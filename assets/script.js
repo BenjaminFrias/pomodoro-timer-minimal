@@ -75,7 +75,6 @@ function startPomodoro() {
     
     // Start in the right second
     totalDuration = duration;
-    timer();
     interval = setInterval(timer, 1000);
 }
 
